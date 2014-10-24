@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ru.anr</groupId>
+    <artifactId>code.conventions</artifactId>
+    <version>1.0</version>
+
+    <name>Code conventions</name>
+    <description>Some code conventions</description>
+
+    <licenses>
+        <license>
+            <name>The MIT License (MIT)</name>
+            <url>http://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+    
+    <scm>
+        <connection>scm:git:ssh://@github.com/anr-ru/code.conventions.git</connection>
+        <url>https://github.com/anr-ru/code.conventions</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>alex</id>
+            <name>Alexey Romanchuk</name>
+            <email>alexey.p.romanchuk@gmail.com</email>
+            <timezone>5</timezone>
+        </developer>
+        <developer>
+            <id>tsergey</id>
+            <name>Sergey Tarabukin</name>
+            <email></email>
+            <timezone>5</timezone>
+        </developer>
+    </developers>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>eclipse</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+
+</project>

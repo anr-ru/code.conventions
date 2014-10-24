@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<ruleset name="Java PMD ruleset" xmlns="http://pmd.sf.net/ruleset/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
+    xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
+    <description>A typical set of coding rules</description>
+
+	<!-- use pmd-tests-settings.xml for tests -->
+    <exclude-pattern>.*/src/test/java/.*</exclude-pattern>
+
+    <rule ref="rulesets/internal/all-java.xml">
+
+        <exclude name="GodClass" />
+        <exclude name="CyclomaticComplexity" />
+        <exclude name="NPathComplexity" />
+
+        <exclude name="AvoidFinalLocalVariable" />
+        <exclude name="BeanMembersShouldSerialize" />
+        <exclude name="TestClassWithoutTestCases" />
+
+        <exclude name="MethodArgumentCouldBeFinal" />
+        <exclude name="LocalVariableCouldBeFinal" />
+        <exclude name="JUnitAssertionsShouldIncludeMessage" />
+        <exclude name="JUnitTestContainsTooManyAsserts" />
+
+
+        <exclude name="AvoidInstantiatingObjectsInLoops" />
+        <exclude name="DefaultPackage" />
+        <exclude name="UselessOverridingMethod" />
+        <exclude name="SingularField" />
+        <exclude name="AvoidSynchronizedAtMethodLevel" />
+        <exclude name="AtLeastOneConstructor" />
+        <exclude name="ExcessiveImports" />
+        <exclude name="EmptyMethodInAbstractClassShouldBeAbstract" />
+
+        <exclude name="CallSuperFirst"/>
+        <exclude name="CallSuperLast"/>
+        <exclude name="DoNotHardCodeSDCard"/>
+        <exclude name="AbstractClassWithoutAnyMethod"/>
+        <exclude name="UnnecessaryConstructor"/>
+        <exclude name="RedundantFieldInitializer"/>
+        <exclude name="LoosePackageCoupling"/>
+
+        <exclude name="UselessParentheses"/>
+
+        <!-- Wrong written rules-->
+        <exclude name="NullAssignment" />
+        <exclude name="DataflowAnomalyAnalysis" />
+
+
+        <!-- A controversial rule -->
+        <exclude name="ConstructorCallsOverridableMethod" />
+
+
+        <!-- overridden rules -->
+        <exclude name="VariableNamingConventions" />
+        <exclude name="LongVariable" />
+        <exclude name="ShortVariable" />
+        <exclude name="LoggerIsNotStaticFinal" />
+        <exclude name="TooManyMethods" />
+        <exclude name="TooManyFields" />
+        <exclude name="AvoidDuplicateLiterals" />
+
+
+        <exclude name="AvoidLiteralsInIfCondition" />
+        <exclude name="UseConcurrentHashMap" />
+        <exclude name="GuardDebugLogging" />
+        <exclude name="AvoidCatchingGenericException" />
+        <exclude name="SignatureDeclareThrowsException" />
+        <exclude name="CommentSize"/>
+        <exclude name="LawOfDemeter"/>
+
+        <exclude name="FieldDeclarationsShouldBeAtStartOfClass"/>
+        <exclude name="ShortClassName"/>
+        <exclude name="OneDeclarationPerLine"/>
+        <exclude name="AvoidPrefixingMethodParameters"/>
+    </rule>
+
+    <rule ref="rulesets/java/naming.xml/LongVariable">
+        <properties>
+            <property name="minimum" value="32" />
+        </properties>
+    </rule>
+
+    <rule ref="rulesets/java/naming.xml/VariableNamingConventions">
+        <properties>
+            <!-- Ifnore for final static logger -->
+            <property name="violationSuppressXPath"
+                value="//ClassOrInterfaceBody//VariableDeclarator//VariableDeclaratorId[@Image='logger']"/>
+        </properties>
+    </rule>
+
+    <rule ref="rulesets/java/codesize.xml/TooManyMethods">
+        <properties>
+            <property name="maxmethods" value="32" />
+        </properties>
+    </rule>
+    <rule ref="rulesets/java/codesize.xml/TooManyFields">
+        <properties>
+            <property name="maxfields" value="32" />
+        </properties>
+    </rule>
+    <rule ref="rulesets/java/strings.xml/AvoidDuplicateLiterals">
+        <properties>
+            <property name="skipAnnotations" value="true" />
+            <!-- no russian letter -->
+            <property name="violationSuppressRegex" value="[а+яА+ЯёЁ]" />
+            <property name="maxDuplicateLiterals" value="6" />
+        </properties>
+    </rule>
+
+    <rule ref="rulesets/java/comments.xml/CommentSize">
+        <properties>
+            <property name="maxLines" value="200" />
+            <property name="maxLineLength" value="120" />
+        </properties>
+    </rule>
+
+</ruleset>
