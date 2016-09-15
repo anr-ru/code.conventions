@@ -6,7 +6,7 @@ id="org.eclipse.jdt.ui.text.codetemplates.typecomment" name="typecomment">
  * Description ...
  *
  *
- * @author &lt;PLACE YOUR NAME HERE&gt;
+ * @author ${name:git_config(user.name)}
  * @created ${date}
  *
  */
